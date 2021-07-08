@@ -1,15 +1,7 @@
 ## :anger: &nbsp;Table of Contents
 
-Only main chapters:
-
-- **[CLI Tools](#cli-tools-toc)**
-- **[GUI Tools](#gui-tools-toc)**
-- **[Cheat Sheets](#cheat-sheets-toc)**
-- **[One-liners](#one-liners-toc)**
 
 ## :star: &nbsp; Knowledge Sharing
-
-#### One-liners &nbsp;[<sup>[TOC]</sup>](#anger-table-of-contents)
 
 #### Table of Contents
 
@@ -53,50 +45,50 @@ Only main chapters:
   * [sed](#tool-sed)
   * [grep](#tool-grep)
 
-#### To delete files . but no recover .
+#### 1. To delete files . but no recover .
 
 ```bash
 shred -zvu  filename
 ```
 
-#### To check difference between the two directory.
+#### 2. To check difference between the two directory.
 
 ```bash
 diff -q ~/trainee_2017/c_programming/ ~/trainee_2017/unix/
 ```
 
-#### Rename a file at once.
+#### 3. Rename a file at once.
 
 ```bash
 rename -v 's/\.pdf$/\.doc/' .pdf 
 file-rename 's/_/ /g' .pdf
 ```
 
-#### Display the dictionary words.
+#### 4. Display the dictionary words.
 
 ```bash
 look word - it is used to get the dictory words.
 ```
 
-#### tar file with the encryption to create
+#### 5. tar file with the encryption to create
 
 ```bash
 tar -czf -  | openssl enc -e -aes256 -out secured.tar.gz 
 ```
 
-#### Decrypt the tar file from encryption.
+#### 6. Decrypt the tar file from encryption.
 
 ```bash
 openssl enc -d -aes256 -in secured.tar.gz | tar xz -C test
 ```
 
-#### To run the command every second - shell
+#### 7. To run the command every second - shell
 
 ```bash
 while true ; do echo -ne "`date`\r" ; done 
 ```
 
-#### To find the duplicate files:
+#### 8. To find the duplicate files:
 
 ```bash
 find . ! -empty -type f -exec md5sum {} + | sort | uniq -w32 -dD 
@@ -108,7 +100,7 @@ RED Color:
 PS1='\[\e[0m\]\[\e]2;\a\e[31;1m\] ${debian_chroot:+($debian_chroot)}\u\[\e[0m\]\[\e[0m\]\[\e]2;\a\e[36;1m\]\w\[\e[0m\]\[\e[0m\]\[\e]2;\a\e[30;1m\]\$\[\e[0m\]'
 ```
 
-#### Find the last modification time for whole system:
+#### 9. Find the last modification time for whole system:
 
 ```bash
 find /home/santhosh/trainee_2017/ -type d -printf '%TY-%Tm-%Td %TT %p\n' | sort -r 
