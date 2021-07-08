@@ -451,7 +451,7 @@ VBoxManage modifyhd [VDI] --resize [megabytes]
 Ex. VBoxManage modifyhd Ubuntu12.vdi --resize 30000 (30GB)
 ```
 
-#### Tool: [terminal](https://en.wikipedia.org/wiki/Linux_console)
+### Tool: [terminal](https://en.wikipedia.org/wiki/Linux_console)
 
 #### Close shell keeping all subprocess running
 
@@ -528,7 +528,7 @@ unset MAIL; export MAILCHECK=1; export MAILPATH='$FILE_TO_WATCH?$MESSAGE'
 
 ---
 
-#### Tool: [mount](https://en.wikipedia.org/wiki/Mount_(Unix))
+### Tool: [mount](https://en.wikipedia.org/wiki/Mount_(Unix))
 
 #### Mount a temporary ram partition
 
@@ -545,7 +545,7 @@ mount -t tmpfs tmpfs /mnt -o size=64M
 mount -o remount,rw /
 ```
 
-#### Tool: [fuser](https://en.wikipedia.org/wiki/Fuser_(Unix))
+### Tool: [fuser](https://en.wikipedia.org/wiki/Fuser_(Unix))
 
 #### Show which processes use the files/directories
 
@@ -582,7 +582,7 @@ fuser -v 53/udp
 fuser -mv /var/www
 ```
 
-#### Tool: [lsof](https://en.wikipedia.org/wiki/Lsof)
+### Tool: [lsof](https://en.wikipedia.org/wiki/Lsof)
 
 #### Show process that use internet connection at the moment
 
@@ -646,7 +646,7 @@ sort -n -u | tail | column -t
 lsof -p <PID> | grep cwd
 ```
 
-#### Tool: [ps](https://en.wikipedia.org/wiki/Ps_(Unix))
+### Tool: [ps](https://en.wikipedia.org/wiki/Ps_(Unix))
 
 #### Show a 4-way scrollable process tree with full details
 
@@ -660,7 +660,7 @@ ps awwfux | less -S
 ps hax -o user | sort | uniq -c | sort -r
 ```
 
-#### Tool: [find](https://en.wikipedia.org/wiki/Find_(Unix))
+### Tool: [find](https://en.wikipedia.org/wiki/Find_(Unix))
 
 #### Find files that have been modified on your system in the past 60 minutes
 
@@ -770,7 +770,7 @@ find / \( -perm -4000 -o -perm -2000 \) -type f -exec ls -la {} \;
 ```
 
 
-#### Tool: [vmstat](https://en.wikipedia.org/wiki/Vmstat)
+### Tool: [vmstat](https://en.wikipedia.org/wiki/Vmstat)
 
 #### Show current system utilization (fields in kilobytes)
 
@@ -808,7 +808,7 @@ vmstat -s
 vmstat -m
 ```
 
-#### Tool: [iostat](https://en.wikipedia.org/wiki/Iostat)
+### Tool: [iostat](https://en.wikipedia.org/wiki/Iostat)
 
 #### Show information about the CPU usage, and I/O statistics about all the partitions
 
@@ -841,7 +841,7 @@ iostat -N
 
 ___
 
-#### Tool: [strace](https://en.wikipedia.org/wiki/Strace)
+### Tool: [strace](https://en.wikipedia.org/wiki/Strace)
 
 #### Track with child processes
 
@@ -886,7 +886,7 @@ strace -f -e trace=network nc -lu 80
 ```
 ___
 
-#### Tool: [kill](https://en.wikipedia.org/wiki/Kill_(command))
+### Tool: [kill](https://en.wikipedia.org/wiki/Kill_(command))
 
 #### Kill a process running on port
 
@@ -894,7 +894,7 @@ ___
 kill -9 $(lsof -i :<port> | awk '{l=$2} END {print l}')
 ```
 ___
-#### Tool: [vimdiff](http://vimdoc.sourceforge.net/htmldoc/diff.html)
+### Tool: [vimdiff](http://vimdoc.sourceforge.net/htmldoc/diff.html)
 
 #### Highlight the exact differences, based on characters and words
 
@@ -914,7 +914,7 @@ d(){ vimdiff <(f $1) <(f $2);};f(){ hexdump -C $1|cut -d' ' -f3-|tr -s ' ';}; d 
 
 ___
 
-#### Tool: [tail](https://en.wikipedia.org/wiki/Tail_(Unix))
+### Tool: [tail](https://en.wikipedia.org/wiki/Tail_(Unix))
 
 #### Annotate tail -f with timestamps
 
@@ -935,7 +935,7 @@ tail -n 100 -f /path/to/logfile | grep "HTTP/[1-2].[0-1]\" [5]"
 ```
 ___
 
-#### Tool: [cpulimit](http://cpulimit.sourceforge.net/)
+### Tool: [cpulimit](http://cpulimit.sourceforge.net/)
 
 #### Limit the cpu usage of a process
 
@@ -944,7 +944,7 @@ cpulimit -p pid -l 50
 ```
 ___
 
-#### Tool: [pwdx](https://www.cyberciti.biz/faq/unix-linux-pwdx-command-examples-usage-syntax/)
+### Tool: [pwdx](https://www.cyberciti.biz/faq/unix-linux-pwdx-command-examples-usage-syntax/)
 
 #### Show current working directory of a process
 
@@ -953,7 +953,7 @@ pwdx <pid>
 ```
 ___
 
-#### Tool: [taskset](https://www.cyberciti.biz/faq/taskset-cpu-affinity-command/)
+### Tool: [taskset](https://www.cyberciti.biz/faq/taskset-cpu-affinity-command/)
 
 #### Start a command on only one CPU core
 
@@ -962,7 +962,7 @@ taskset -c 0 <command>
 ```
 ___
 
-#### Tool: [tr](https://en.wikipedia.org/wiki/Tr_(Unix))
+### Tool: [tr](https://en.wikipedia.org/wiki/Tr_(Unix))
 
 #### Show directories in the PATH, one per line
 
@@ -970,7 +970,7 @@ ___
 tr : '\n' <<<$PATH
 ```
 ___
-#### Tool: [chmod](https://en.wikipedia.org/wiki/Chmod)
+### Tool: [chmod](https://en.wikipedia.org/wiki/Chmod)
 
 #### Remove executable bit from all files in the current directory
 
@@ -994,7 +994,7 @@ setfacl --set u::rwx,g::---,o::--- /bin/chmod
 ```
 ___
 
-#### Tool: [who](https://en.wikipedia.org/wiki/Who_(Unix))
+### Tool: [who](https://en.wikipedia.org/wiki/Who_(Unix))
 
 #### Find last reboot time
 
@@ -1009,7 +1009,7 @@ who -b
 ```
 ___
 
-#### Tool: [last](https://www.howtoforge.com/linux-last-command/)
+### Tool: [last](https://www.howtoforge.com/linux-last-command/)
 
 #### Was the last reboot a panic?
 
@@ -1019,7 +1019,7 @@ grep -A1 reboot | head -2 | grep -q shutdown && echo "Expected reboot" || echo "
 ```
 ___
 
-#### Tool: [screen](https://en.wikipedia.org/wiki/GNU_Screen)
+### Tool: [screen](https://en.wikipedia.org/wiki/GNU_Screen)
 
 #### Start screen in detached mode
 
@@ -1034,7 +1034,7 @@ screen -r -d <pid>
 ```
 ___
 
-#### Tool: [script](https://en.wikipedia.org/wiki/Script_(Unix))
+### Tool: [script](https://en.wikipedia.org/wiki/Script_(Unix))
 
 #### Record and replay terminal session
 
@@ -1052,7 +1052,7 @@ scriptreplay --timing=session.time session.log
 
 ___
 
-#### Tool: [du](https://en.wikipedia.org/wiki/GNU_Screen)
+### Tool: [du](https://en.wikipedia.org/wiki/GNU_Screen)
 
 #### Show 20 biggest directories with 'K M G'
 
@@ -1063,7 +1063,7 @@ awk '{split("K M G",v); s=1; while($1>1024){$1/=1024; s++} print int($1)" "v[s]"
 head -n 20
 ```
 
-#### Tool: [openssl](https://www.openssl.org/)
+### Tool: [openssl](https://www.openssl.org/)
 
 #### Testing connection to the remote host
 
@@ -1413,7 +1413,7 @@ openssl req -noout -modulus -in request.csr | openssl md5) | uniq
 
 ___
 
-#### Tool: [secure-delete](https://wiki.archlinux.org/index.php/Securely_wipe_disk)
+### Tool: [secure-delete](https://wiki.archlinux.org/index.php/Securely_wipe_disk)
 
 #### Secure delete with shred
 
@@ -1436,7 +1436,7 @@ badblocks -s -w -t random -v /dev/sda
 badblocks -c 10240 -s -w -t random -v /dev/sda
 ```
 
-#### Tool: [dd](https://en.wikipedia.org/wiki/Dd_(Unix))
+### Tool: [dd](https://en.wikipedia.org/wiki/Dd_(Unix))
 
 #### Show dd status every so often
 
@@ -1445,7 +1445,7 @@ dd <dd_params> status=progress
 watch --interval 5 killall -USR1 dd
 ```
 ___
-#### Tool: [system-other](https://github.com/trimstray/the-book-of-secret-knowledge#tool-system-other)
+### Tool: [system-other](https://github.com/trimstray/the-book-of-secret-knowledge#tool-system-other)
 
 #### Reboot system from init
 
@@ -1471,7 +1471,7 @@ readlink -f /proc/<PID>/cwd
 readlink -f /proc/<PID>/exe
 ```
 
-#### Tool: [curl](https://curl.haxx.se)
+### Tool: [curl](https://curl.haxx.se)
 
 ```bash
 curl -Iks https://www.google.com
@@ -1511,7 +1511,7 @@ curl icanhazip.com
 curl ifconfig.me/ip ; echo
 ```
 
-#### Tool: [ssh](https://www.openssh.com/)
+### Tool: [ssh](https://www.openssh.com/)
 
 #### SSH connection through host in the middle
 
@@ -1601,7 +1601,7 @@ host2> psql -U postgres -d postgres -p 8000 -h localhost
 
 ___
 
-#### Tool: [linux-dev](https://www.tldp.org/LDP/abs/html/devref1.html)
+### Tool: [linux-dev](https://www.tldp.org/LDP/abs/html/devref1.html)
 
 #### Testing remote connection to port
 
@@ -1621,7 +1621,7 @@ exec 5<>/dev/tcp/<host>/<port>; cat <&5 & cat >&5; exec 5>&-
 
 ___
 
-#### Tool: [tcpdump](http://www.tcpdump.org/)
+### Tool: [tcpdump](http://www.tcpdump.org/)
 
 #### Filter incoming (on interface) traffic (specific <ip:port>)
 
@@ -1674,7 +1674,7 @@ tcpdump -ei eth0 -w /tmp/capture-%H.pcap -G 3600 -C 200
   * `-C <size>` - close the current pcap and open a new one if is larger than `<size>`
 
 
-#### Tool: [nmap](https://nmap.org/)
+### Tool: [nmap](https://nmap.org/)
 
 #### Ping scans the network
 
@@ -1754,7 +1754,7 @@ nmap --script="$_nmap_nse_scripts" --script-args="$_nmap_nse_scripts_args" -p "$
 
 ___
 
-#### Tool: [netcat](http://netcat.sourceforge.net/)
+### Tool: [netcat](http://netcat.sourceforge.net/)
 
 ```bash
 nc -kl 5000
@@ -1819,7 +1819,7 @@ nc -l -u -p 2000 -c "nc -u [ip|hostname] 3000"
 nc -l -u -p 2000 -c "nc [ip|hostname] 3000"
 ```
 
-#### Tool: [netstat](https://en.wikipedia.org/wiki/Netstat)
+### Tool: [netstat](https://en.wikipedia.org/wiki/Netstat)
 
 #### Monitor open connections for specific port including listen, count and sort it per IP
 
@@ -1828,7 +1828,7 @@ watch "netstat -plan | grep :443 | awk {'print \$5'} | cut -d: -f 1 | sort | uni
 ```
 ___
 
-#### Tool: [rsync](https://en.wikipedia.org/wiki/Rsync)
+### Tool: [rsync](https://en.wikipedia.org/wiki/Rsync)
 
 #### Rsync remote data as root using sudo
 
@@ -1836,7 +1836,7 @@ ___
 rsync --rsync-path 'sudo rsync' username@hostname:/path/to/dir/ /local/
 ```
 
-#### Tool: [awk](http://www.grymoire.com/Unix/Awk.html)
+### Tool: [awk](http://www.grymoire.com/Unix/Awk.html)
 
 #### Search for matching lines
 
@@ -1962,7 +1962,7 @@ awk '/regexp/{gsub(/foo/, "bar")};{print}' filename
 ```bash
 awk '/regexp/{sub(/^/, "++++"); print;next;}{print}' filename
 ```
-#### Tool: [sed](http://www.grymoire.com/Unix/Sed.html)
+### Tool: [sed](http://www.grymoire.com/Unix/Sed.html)
 
 #### Print a specific line from a file
 
@@ -1993,7 +1993,7 @@ sed ':a;N;$!ba;s/\n/ /g' /path/to/file
 - `s` substitute, `/\n/` regex for new line, `/ /` by a space, `/g` global match (as many times as it can)
 
 
-#### Tool: [grep](http://www.grymoire.com/Unix/Grep.html)
+### Tool: [grep](http://www.grymoire.com/Unix/Grep.html)
 
 #### Search for a "pattern" inside all files in the current directory
 
