@@ -1,70 +1,69 @@
 ## :anger: &nbsp;Table of Contents
 
-
 ## :star: &nbsp; Knowledge Sharing
 
 #### Table of Contents
 
-  * [terminal](#tool-terminal)
-  * [mount](#tool-mount)
-  * [fuser](#tool-fuser)
-  * [lsof](#tool-lsof)
-  * [ps](#tool-ps)
-  * [top](#tool-top)
-  * [vmstat](#tool-vmstat)
-  * [iostat](#tool-iostat)
-  * [strace](#tool-strace)
-  * [kill](#tool-kill)
-  * [find](#tool-find)
-  * [vimdiff](#tool-vimdiff)
-  * [tail](#tool-tail)
-  * [cpulimit](#tool-cpulimit)
-  * [pwdx](#tool-pwdx)
-  * [tr](#tool-tr)
-  * [chmod](#tool-chmod)
-  * [who](#tool-who)
-  * [last](#tool-last)
-  * [screen](#tool-screen)
-  * [script](#tool-script)
-  * [du](#tool-du)
-  * [openssl](#tool-openssl)
-  * [secure-delete](#tool-secure-delete)
-  * [dd](#tool-dd)
-  * [gpg](#tool-gpg)
-  * [system-other](#tool-system-other)
-  * [curl](#tool-curl)
-  * [ssh](#tool-ssh)
-  * [linux-dev](#tool-linux-dev)
-  * [tcpdump](#tool-tcpdump)
-  * [nmap](#tool-nmap)
-  * [netcat](#tool-netcat)
-  * [netstat](#tool-netstat)
-  * [rsync](#tool-rsync)
-  * [host](#tool-host)
-  * [awk](#tool-awk)
-  * [sed](#tool-sed)
-  * [grep](#tool-grep)
+* [terminal](#tool-terminal)
+* [mount](#tool-mount)
+* [fuser](#tool-fuser)
+* [lsof](#tool-lsof)
+* [ps](#tool-ps)
+* [top](#tool-top)
+* [vmstat](#tool-vmstat)
+* [iostat](#tool-iostat)
+* [strace](#tool-strace)
+* [kill](#tool-kill)
+* [find](#tool-find)
+* [vimdiff](#tool-vimdiff)
+* [tail](#tool-tail)
+* [cpulimit](#tool-cpulimit)
+* [pwdx](#tool-pwdx)
+* [tr](#tool-tr)
+* [chmod](#tool-chmod)
+* [who](#tool-who)
+* [last](#tool-last)
+* [screen](#tool-screen)
+* [script](#tool-script)
+* [du](#tool-du)
+* [openssl](#tool-openssl)
+* [secure-delete](#tool-secure-delete)
+* [dd](#tool-dd)
+* [gpg](#tool-gpg)
+* [system-other](#tool-system-other)
+* [curl](#tool-curl)
+* [ssh](#tool-ssh)
+* [linux-dev](#tool-linux-dev)
+* [tcpdump](#tool-tcpdump)
+* [nmap](#tool-nmap)
+* [netcat](#tool-netcat)
+* [netstat](#tool-netstat)
+* [rsync](#tool-rsync)
+* [host](#tool-host)
+* [awk](#tool-awk)
+* [sed](#tool-sed)
+* [grep](#tool-grep)
 
-#### 1. To delete files . but no recover .
+#### 1. To delete files . but no recover
 
 ```bash
 shred -zvu  filename
 ```
 
-#### 2. To check difference between the two directory.
+#### 2. To check difference between the two directory
 
 ```bash
 diff -q ~/trainee_2017/c_programming/ ~/trainee_2017/unix/
 ```
 
-#### 3. Rename a file at once.
+#### 3. Rename a file at once
 
 ```bash
 rename -v 's/\.pdf$/\.doc/' .pdf 
 file-rename 's/_/ /g' .pdf
 ```
 
-#### 4. Display the dictionary words.
+#### 4. Display the dictionary words
 
 ```bash
 look word - it is used to get the dictory words.
@@ -76,7 +75,7 @@ look word - it is used to get the dictory words.
 tar -czf -  | openssl enc -e -aes256 -out secured.tar.gz 
 ```
 
-#### 6. Decrypt the tar file from encryption.
+#### 6. Decrypt the tar file from encryption
 
 ```bash
 openssl enc -d -aes256 -in secured.tar.gz | tar xz -C test
@@ -88,7 +87,7 @@ openssl enc -d -aes256 -in secured.tar.gz | tar xz -C test
 while true ; do echo -ne "`date`\r" ; done 
 ```
 
-#### 8. To find the duplicate files:
+#### 8. To find the duplicate files
 
 ```bash
 find . ! -empty -type f -exec md5sum {} + | sort | uniq -w32 -dD 
@@ -100,7 +99,7 @@ RED Color:
 PS1='\[\e[0m\]\[\e]2;\a\e[31;1m\] ${debian_chroot:+($debian_chroot)}\u\[\e[0m\]\[\e[0m\]\[\e]2;\a\e[36;1m\]\w\[\e[0m\]\[\e[0m\]\[\e]2;\a\e[30;1m\]\$\[\e[0m\]'
 ```
 
-#### 9. Find the last modification time for whole system:
+#### 9. Find the last modification time for whole system
 
 ```bash
 find /home/santhosh/trainee_2017/ -type d -printf '%TY-%Tm-%Td %TT %p\n' | sort -r 
@@ -112,45 +111,45 @@ find /home/santhosh/trainee_2017/ -type d -printf '%TY-%Tm-%Td %TT %p\n' | sort 
 du -hs  | sort -rh 
 ```
 
-#### To Find the location of the process file.
+#### To Find the location of the process file
 
 ```bash
 lsof -p <pid> -- total info about the process
 pwdx <pid>
 ```
 
-#### To change the color for directory and file types in the terminal.
+#### To change the color for directory and file types in the terminal
 
 ```bash
 dircolors 
 ```
 
-#### High level compression in tar file  using GZIP.
+#### High level compression in tar file  using GZIP
 
 ```bash
 env GZIP=-9 tar cvzf database.tar.gz /home/santhosh/
 ```
 
-#### To List the limits in the file system.
+#### To List the limits in the file system
 
 ```bash
 ulimit -a = To find the limits in the system.
 ```
 
-#### To create the undeletable file even root also not able to delete.
+#### To create the undeletable file even root also not able to delete
 
 ```bash
 chattr +i file 
 chattr -i file 
 ```
 
-#### Copy a file to the multiple directory.
+#### Copy a file to the multiple directory
 
 ```bash
 echo ./d1 ./d2 | xargs -n 1 cp -v file
 ```
 
-#### Google Drive access:
+#### Google Drive access
 
 ```bash
 sudo add-apt-repository ppa:alessandro-strada/ppa
@@ -158,7 +157,7 @@ sudo apt-get update
 sudo apt-get install google-drive-ocamlfuse
 ```
 
-#### Create a file with 100 lines with random values.
+#### Create a file with 100 lines with random values
 
 ```bash
 cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 100 > /path/to/file
@@ -186,9 +185,9 @@ unset HISTFILE && exit
 lsof -i
 ss -l
 tcp:
-	netstat -tulapn
+ netstat -tulapn
 udp:
-	netstat -tupleean
+ netstat -tupleean
 
 ```
 
@@ -208,7 +207,7 @@ Other such examples
 -e trace=memory - trace all memory mapping related system calls.
 ```
 
-#### Font in Italic in terminal 
+#### Font in Italic in terminal
 
 ```bash
 echo -e "\e[3m Santhosh Italic \e[23m"
@@ -220,7 +219,7 @@ echo -e "\e[3m Santhosh Italic \e[23m"
 ssh -v root@68.183.83.227 -o "ProxyCommand=nc -X connect -x 192.168.12.10:3128 %h %p"
 ```
 
-#### Find the largest or bigger files in the system 
+#### Find the largest or bigger files in the system
 
 ```bash
 find / -xdev -type f -size +100M -exec ls -lhrt {} \;
@@ -228,7 +227,7 @@ find / -xdev -type f -size +100M -exec ls -lhrt {} \;
 du -ahx /  | sort -rh | head -30
 ```
 
-#### Create Bootable OS in pendrive 
+#### Create Bootable OS in pendrive
 
 ```bash
   $. lsblk
@@ -241,6 +240,7 @@ du -ahx /  | sort -rh | head -30
 #### Automount network directory
 
 Place the file in the fstab. To check the entry is correct or not. execute the mount -a command.
+
 ```bash
 192.168.12.10:/home/share /home/share   nfs defaults    0 0
 ```
@@ -318,13 +318,13 @@ tar cf - paths-to-archive | pigz -9 -p 32 > archive.tar.gz
 
 root@DR $ time tar cf - mlog_jul_aug_2017 | pigz > mlog_jul_aug_2017.tar.gz
 
-real	2m25.811s
-user	12m3.508s
-sys	0m54.628s
+real 2m25.811s
+user 12m3.508s
+sys 0m54.628s
 
 ```
 
-#### Reverse ssh tunnel 
+#### Reverse ssh tunnel
 
 ```bash
 https://unix.stackexchange.com/questions/46235/how-does-reverse-ssh-tunneling-work 
@@ -349,7 +349,7 @@ User2: ssh -nNT -L 4445:127.0.0.1:4444 user1@122.165.68.50 -p223 -v
 ssh user2@127.0.0.1 -p4445
 ```
 
-#### Mail download from larry :
+#### Mail download from larry
 
 ```bash
 
@@ -358,7 +358,7 @@ ssh -L 8888:192.168.12.10:143 root@103.16.202.174 -v
 ssh -L 8887:127.0.0.1:8888 santhosh@122.165.68.50
 ```
 
-#### Openssl RSA encrypt and decrypt command :
+#### Openssl RSA encrypt and decrypt command
 
 ```bash
 For encryption:
@@ -383,14 +383,14 @@ Learn:
     openssl rsautl: Encrypt and decrypt files with RSA keys.
 ```
 
-#### Delete specific page in pdf file using pdftk:
+#### Delete specific page in pdf file using pdftk
 
 ```bash
  for i in pdf ; do pdftk "$i" cat 1 output "trimmed/$i" ; done
 
 ```
 
-#### Mount Filesystem through SSH:
+#### Mount Filesystem through SSH
 
 ```bash
 
@@ -433,7 +433,7 @@ L2TP monitoring :
 https://gist.github.com/hwdsl2/855904bfdf0aec6a9cf8d16882acccea
 ```
 
-#### Send content in pipe curl 
+#### Send content in pipe curl
 
 ```bash
 last  | head | curl -X POST -H 'Content-Type: application/json' 'https://chat.googleapis.com/v1/spaces/AAAAuKKC-XI/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=RkPPfTH7IJYI5ApPA0NzufMhwWCKGdWOwsTOxYiTCq4%3D' -d  "{\"text\": \"$(</dev/stdin)\"}"
@@ -536,8 +536,8 @@ unset MAIL; export MAILCHECK=1; export MAILPATH='$FILE_TO_WATCH?$MESSAGE'
 mount -t tmpfs tmpfs /mnt -o size=64M
 ```
 
-  * `-t` - filesystem type
-  * `-o` - mount options
+* `-t` - filesystem type
+* `-o` - mount options
 
 #### Remount a filesystem as read/write
 
@@ -560,7 +560,7 @@ fuser -v /home/supervisor
 fuser -ki filename
 ```
 
-  * `-i` - interactive option
+* `-i` - interactive option
 
 #### Kills a process that is locking a file with specific signal
 
@@ -568,7 +568,7 @@ fuser -ki filename
 fuser -k -HUP filename
 ```
 
-  * `--list-signals` - list available signal names
+* `--list-signals` - list available signal names
 
 #### Show what PID is listening on specific port
 
@@ -769,7 +769,6 @@ find . -depth -name '*test*' -execdir bash -c 'mv -v "$1" "${1//foo/bar}"' _ {} 
 find / \( -perm -4000 -o -perm -2000 \) -type f -exec ls -la {} \;
 ```
 
-
 ### Tool: [vmstat](https://en.wikipedia.org/wiki/Vmstat)
 
 #### Show current system utilization (fields in kilobytes)
@@ -778,11 +777,11 @@ find / \( -perm -4000 -o -perm -2000 \) -type f -exec ls -la {} \;
 vmstat 2 20 -t -w
 ```
 
-  * `2` - number of times with a defined time interval (delay)
-  * `20` - each execution of the command (count)
-  * `-t` - show timestamp
-  * `-w` - wide output
-  * `-S M` - output of the fields in megabytes instead of kilobytes
+* `2` - number of times with a defined time interval (delay)
+* `20` - each execution of the command (count)
+* `-t` - show timestamp
+* `-w` - wide output
+* `-S M` - output of the fields in megabytes instead of kilobytes
 
 #### Show current system utilization will get refreshed every 5 seconds
 
@@ -816,10 +815,10 @@ vmstat -m
 iostat 2 10 -t -m
 ```
 
-  * `2` - number of times with a defined time interval (delay)
-  * `10` - each execution of the command (count)
-  * `-t` - show timestamp
-  * `-m` - fields in megabytes (`-k` - in kilobytes, default)
+* `2` - number of times with a defined time interval (delay)
+* `10` - each execution of the command (count)
+* `-t` - show timestamp
+* `-m` - fields in megabytes (`-k` - in kilobytes, default)
 
 #### Show information only about the CPU utilization
 
@@ -838,8 +837,6 @@ iostat 2 10 -t -m -d
 ```bash
 iostat -N
 ```
-
-___
 
 ### Tool: [strace](https://en.wikipedia.org/wiki/Strace)
 
@@ -884,6 +881,7 @@ strace -f -e trace=bind nc -l 80
 ```bash
 strace -f -e trace=network nc -lu 80
 ```
+
 ___
 
 ### Tool: [kill](https://en.wikipedia.org/wiki/Kill_(command))
@@ -893,7 +891,9 @@ ___
 ```bash
 kill -9 $(lsof -i :<port> | awk '{l=$2} END {print l}')
 ```
+
 ___
+
 ### Tool: [vimdiff](http://vimdoc.sourceforge.net/htmldoc/diff.html)
 
 #### Highlight the exact differences, based on characters and words
@@ -901,6 +901,7 @@ ___
 ```bash
 vimdiff file1 file2
 ```
+
 #### Compare two JSON files
 
 ```bash
@@ -908,6 +909,7 @@ vimdiff <(jq -S . A.json) <(jq -S . B.json)
 ```
 
 #### Compare Hex dump
+
 ```bash
 d(){ vimdiff <(f $1) <(f $2);};f(){ hexdump -C $1|cut -d' ' -f3-|tr -s ' ';}; d ~/bin1 ~/bin2
 ```
@@ -933,6 +935,7 @@ tail -10000 access_log | awk '{print $1}' | sort | uniq -c | sort -n | tail
 ```bash
 tail -n 100 -f /path/to/logfile | grep "HTTP/[1-2].[0-1]\" [5]"
 ```
+
 ___
 
 ### Tool: [cpulimit](http://cpulimit.sourceforge.net/)
@@ -942,6 +945,7 @@ ___
 ```bash
 cpulimit -p pid -l 50
 ```
+
 ___
 
 ### Tool: [pwdx](https://www.cyberciti.biz/faq/unix-linux-pwdx-command-examples-usage-syntax/)
@@ -951,6 +955,7 @@ ___
 ```bash
 pwdx <pid>
 ```
+
 ___
 
 ### Tool: [taskset](https://www.cyberciti.biz/faq/taskset-cpu-affinity-command/)
@@ -960,6 +965,7 @@ ___
 ```bash
 taskset -c 0 <command>
 ```
+
 ___
 
 ### Tool: [tr](https://en.wikipedia.org/wiki/Tr_(Unix))
@@ -969,7 +975,9 @@ ___
 ```bash
 tr : '\n' <<<$PATH
 ```
+
 ___
+
 ### Tool: [chmod](https://en.wikipedia.org/wiki/Chmod)
 
 #### Remove executable bit from all files in the current directory
@@ -992,6 +1000,7 @@ cp /bin/chmod chmod.01
 # 3:
 setfacl --set u::rwx,g::---,o::--- /bin/chmod
 ```
+
 ___
 
 ### Tool: [who](https://en.wikipedia.org/wiki/Who_(Unix))
@@ -1007,6 +1016,7 @@ who -b
 ```bash
 [[ $(who -m | awk '{ print $1 }') == $(whoami) ]] || echo "You are su-ed to $(whoami)"
 ```
+
 ___
 
 ### Tool: [last](https://www.howtoforge.com/linux-last-command/)
@@ -1017,6 +1027,7 @@ ___
 (last -x -f $(ls -1t /var/log/wtmp* | head -2 | tail -1); last -x -f /var/log/wtmp) | \
 grep -A1 reboot | head -2 | grep -q shutdown && echo "Expected reboot" || echo "Panic reboot"
 ```
+
 ___
 
 ### Tool: [screen](https://en.wikipedia.org/wiki/GNU_Screen)
@@ -1032,6 +1043,7 @@ screen -d -m <command>
 ```bash
 screen -r -d <pid>
 ```
+
 ___
 
 ### Tool: [script](https://en.wikipedia.org/wiki/Script_(Unix))
@@ -1241,11 +1253,11 @@ streetAddress = 2.5.4.9
 
 For more information please look at these great explanations:
 
-- [RFC 5280](https://tools.ietf.org/html/rfc5280)
-- [How to create multidomain certificates using config files](https://apfelboymchen.net/gnu/notes/openssl%20multidomain%20with%20config%20files.html)
-- [Generate a multi domains certificate using config files](https://gist.github.com/romainnorberg/464758a6620228b977212a3cf20c3e08)
-- [Your OpenSSL CSR command is out of date](https://expeditedsecurity.com/blog/openssl-csr-command/)
-- [OpenSSL example configuration file](https://www.tbs-certificats.com/openssl-dem-server-cert.cnf)
+* [RFC 5280](https://tools.ietf.org/html/rfc5280)
+* [How to create multidomain certificates using config files](https://apfelboymchen.net/gnu/notes/openssl%20multidomain%20with%20config%20files.html)
+* [Generate a multi domains certificate using config files](https://gist.github.com/romainnorberg/464758a6620228b977212a3cf20c3e08)
+* [Your OpenSSL CSR command is out of date](https://expeditedsecurity.com/blog/openssl-csr-command/)
+* [OpenSSL example configuration file](https://www.tbs-certificats.com/openssl-dem-server-cert.cnf)
 
 #### List available EC curves
 
@@ -1444,7 +1456,9 @@ badblocks -c 10240 -s -w -t random -v /dev/sda
 dd <dd_params> status=progress
 watch --interval 5 killall -USR1 dd
 ```
+
 ___
+
 ### Tool: [system-other](https://github.com/trimstray/the-book-of-secret-knowledge#tool-system-other)
 
 #### Reboot system from init
@@ -1477,30 +1491,30 @@ readlink -f /proc/<PID>/exe
 curl -Iks https://www.google.com
 ```
 
-  * `-I` - show response headers only
-  * `-k` - insecure connection when using ssl
-  * `-s` - silent mode (not display body)
+* `-I` - show response headers only
+* `-k` - insecure connection when using ssl
+* `-s` - silent mode (not display body)
 
 ```bash
 curl -Iks --location -X GET -A "x-agent" https://www.google.com
 ```
 
-  * `--location` - follow redirects
-  * `-X` - set method
-  * `-A` - set user-agent
+* `--location` - follow redirects
+* `-X` - set method
+* `-A` - set user-agent
 
 ```bash
 curl -Iks --location -X GET -A "x-agent" --proxy http://127.0.0.1:16379 https://www.google.com
 ```
 
-  * `--proxy [socks5://|http://]` - set proxy server
+* `--proxy [socks5://|http://]` - set proxy server
 
 ```bash
 curl -o file.pdf -C - https://example.com/Aiju2goo0Ja2.pdf
 ```
 
-  * `-o` - write output to file
-  * `-C` - resume the transfer
+* `-o` - write output to file
+* `-C` - resume the transfer
 
 #### Find your external IP address (external services)
 
@@ -1518,6 +1532,7 @@ curl ifconfig.me/ip ; echo
 ```bash
 ssh -t reachable_host ssh unreachable_host
 ```
+
 #### Run command over SSH on remote host
 
 ```bash
@@ -1556,7 +1571,6 @@ ssh -o PreferredAuthentications=publickey -o PubkeyAuthentication=yes -i id_rsa 
 
 Unser testing
 
-
 #### SSH login without processing any login scripts
 
 ```bash
@@ -1585,9 +1599,9 @@ host1> ssh -nNT -L 9051:db.d.x:5432 node.d.y
 host1> psql -U db_user -d db_dev -p 9051 -h localhost
 ```
 
-  * `-n` - redirects stdin from `/dev/null`
-  * `-N` - do not execute a remote command
-  * `-T` - disable pseudo-terminal allocation
+* `-n` - redirects stdin from `/dev/null`
+* `-N` - do not execute a remote command
+* `-T` - disable pseudo-terminal allocation
 
 #### SSH remote port forwarding
 
@@ -1609,9 +1623,9 @@ ___
 timeout 1 bash -c "</dev/<proto>/<host>/<port>" >/dev/null 2>&1 ; echo $?
 ```
 
-  * `<proto` - set protocol (tcp/udp)
-  * `<host>` - set remote host
-  * `<port>` - set destination port
+* `<proto` - set protocol (tcp/udp)
+* `<host>` - set remote host
+* `<port>` - set destination port
 
 #### Read and write to TCP or UDP sockets with common bash tools
 
@@ -1629,8 +1643,8 @@ ___
 tcpdump -ne -i eth0 -Q in host 192.168.252.1 and port 443
 ```
 
-  * `-n` - don't convert addresses (`-nn` will not resolve hostnames or ports)
-  * `-e` - print the link-level headers
+* `-n` - don't convert addresses (`-nn` will not resolve hostnames or ports)
+* `-e` - print the link-level headers
   * `-i [iface|any]` - set interface
   * `-Q|-D [in|out|inout]` - choose send/receive direction (`-D` - for old tcpdump versions)
   * `host [ip|hostname]` - set host, also `[host not]`
@@ -1643,8 +1657,8 @@ tcpdump -ne -i eth0 -Q in host 192.168.252.1 and port 443
 tcpdump -ne -i eth0 -Q in host 192.168.252.1 and port 443 -c 5 -w tcpdump.pcap
 ```
 
-  * `-c [num]` - capture only num number of packets
-  * `-w [filename]` - write packets to file, `-r [filename]` - reading from file
+* `-c [num]` - capture only num number of packets
+* `-w [filename]` - write packets to file, `-r [filename]` - reading from file
 
 #### Capture all ICMP packets
 
@@ -1670,9 +1684,8 @@ tcpdump -i eth0 -A -s0 port 443
 tcpdump -ei eth0 -w /tmp/capture-%H.pcap -G 3600 -C 200
 ```
 
-  * `-G <num>` - pcap will be created every `<num>` seconds
-  * `-C <size>` - close the current pcap and open a new one if is larger than `<size>`
-
+* `-G <num>` - pcap will be created every `<num>` seconds
+* `-C <size>` - close the current pcap and open a new one if is larger than `<size>`
 
 ### Tool: [nmap](https://nmap.org/)
 
@@ -1760,28 +1773,28 @@ ___
 nc -kl 5000
 ```
 
-  * `-l` - listen for an incoming connection
-  * `-k` - listening after client has disconnected
-  * `>filename.out` - save receive data to file (optional)
+* `-l` - listen for an incoming connection
+* `-k` - listening after client has disconnected
+* `>filename.out` - save receive data to file (optional)
 
 ```bash
 nc 192.168.0.1 5051 < filename.in
 ```
 
-  * `< filename.in` - send data to remote host
+* `< filename.in` - send data to remote host
 
 ```bash
 nc -vz 10.240.30.3 5000
 ```
 
-  * `-v` - verbose output
-  * `-z` - scan for listening daemons
+* `-v` - verbose output
+* `-z` - scan for listening daemons
 
 ```bash
 nc -vzu 10.240.30.3 1-65535
 ```
 
-- `-u` - scan only udp ports
+* `-u` - scan only udp ports
 
 #### Transfer data file (archive)
 
@@ -1826,6 +1839,7 @@ nc -l -u -p 2000 -c "nc [ip|hostname] 3000"
 ```bash
 watch "netstat -plan | grep :443 | awk {'print \$5'} | cut -d: -f 1 | sort | uniq -c | sort -nk 1"
 ```
+
 ___
 
 ### Tool: [rsync](https://en.wikipedia.org/wiki/Rsync)
@@ -1962,6 +1976,7 @@ awk '/regexp/{gsub(/foo/, "bar")};{print}' filename
 ```bash
 awk '/regexp/{sub(/^/, "++++"); print;next;}{print}' filename
 ```
+
 ### Tool: [sed](http://www.grymoire.com/Unix/Sed.html)
 
 #### Print a specific line from a file
@@ -1987,11 +2002,10 @@ sed -i <file> -re '<start>,<end>d'
 sed ':a;N;$!ba;s/\n/ /g' /path/to/file
 ```
 
-- `:a` create a label `a`
-- `N` append the next line to the pattern space
-- `$!` if not the last line, ba branch (go to) label `a`
-- `s` substitute, `/\n/` regex for new line, `/ /` by a space, `/g` global match (as many times as it can)
-
+* `:a` create a label `a`
+* `N` append the next line to the pattern space
+* `$!` if not the last line, ba branch (go to) label `a`
+* `s` substitute, `/\n/` regex for new line, `/ /` by a space, `/g` global match (as many times as it can)
 
 ### Tool: [grep](http://www.grymoire.com/Unix/Grep.html)
 
